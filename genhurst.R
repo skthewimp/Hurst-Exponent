@@ -18,14 +18,12 @@ genhurst <- function(S,q=1,maxT=19)
       X <- as.numeric(X)
       Y <- VV
       mx <- sum(X)/N
-      #print(paste(N,tt))
       SSxx <- sum(X*X)-N*mx*mx
       my <- sum(Y)/N
       SSxy <- sum(X*Y) - N * mx * my
       cc1 <- SSxy/SSxx
       cc2 <- my - cc1*mx
       ddvd <- dV - cc1
-      #print(paste(length(VV),length(dV), length(cc1),N,length(cc2),L))
       vvvd <- VV - cc1*(1:N) - cc2
       mcord <- c(mcord,mean(abs(ddvd)^q)/mean(abs(vvvd)^q))
     }
